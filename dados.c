@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int rolar(int d) {
+void rolar(int d) {
     int n, i, total = 0, dado;
     printf("Quantos d%d?\n", d);
     scanf("%d", &n);
     printf("%dd%d = ", n, d);
     for (i = 1; i <= n; i++){
-        dado = rand() % d;
+        dado = rand() % (d + 1);
         total += dado;
         if (i < n) printf("%d + ", dado);
         else printf("%d = %d\n", dado, total);
     }
-    
 }
 
 int main () {
@@ -36,4 +35,5 @@ int main () {
         if (menu == 5) rolar(12);
         if (menu == 6) rolar(20);
     }
+    return 0;
 }
